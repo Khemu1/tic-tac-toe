@@ -1,4 +1,4 @@
-from index import check_winner, is_board_full
+from .index import check_winner, is_board_full
 
 def minimax(board:list[list[str]], depth:int, is_maximizing:bool, ai_symbol:str, player_symbol:str):
     """
