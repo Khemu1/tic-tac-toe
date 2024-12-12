@@ -1,6 +1,6 @@
-from utils.index import check_winner, is_board_full
+from utils.index import check_winner, is_board_full, vacuum_cleaner
 from utils.ai_algos import minimax, ai_next_move
-
+import os
 def playGame():
     board = [[" ", " ", " "],
             [" ", " ", " "],
@@ -10,18 +10,20 @@ def playGame():
     player_symbol = "O"
 
     turn = "Player"
-    while True:
-        for row in board:
+    while True: 
+        for row in board: 
             print(row)
         
         winner = check_winner(board)
         if winner:
             print(f"{winner} wins!")
-            break
+            vacuum_cleaner(board)
+            continue
         elif is_board_full(board):
             print("It's a draw!")
-            break
-        
+            vacuum_cleaner(board)
+            continue
+
         if turn == "Player":
             print("\nYour turn!")
             try:

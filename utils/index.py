@@ -18,13 +18,15 @@ def check_winner(board):
 
 
 def is_board_full(board):
+    for row in board:
+        if " " in row:  
+            return False
+    return True
+
+def vacuum_cleaner(board):
     rows = len(board);
-    columns = len(board); 
+    columns = len(board[0]); 
     for x in range(rows):
         for y in range(columns):
-            if board[x][y] is None: 
-                board[x][y] = 0  
-                print(f"Cleaned: {x}, {y}")
-                return True  
-  
-    return False 
+            if board[x][y] != "": 
+                board[x][y] = " "  
