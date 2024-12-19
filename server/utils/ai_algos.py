@@ -61,7 +61,7 @@ def ai_next_move(board:list[list[str]], ai_symbol:str, player_symbol:str):
 
     Returns:
         tuple[int, int]: The row and column indices of the best move for the AI.
-    """
+    """  
     best_score = -float('inf')
     best_move = None
     for i in range(3):
